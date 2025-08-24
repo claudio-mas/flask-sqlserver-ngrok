@@ -4,11 +4,11 @@ import pyodbc
 
 app = Flask(__name__)
 
-# === CONFIGURE AQUI SUAS CREDENCIAIS ===
-DATABASE = "SeuBanco"           # ← Altere
-TABLE = "SuaTabela"             # ← Altere
-DB_USER = "flask_user"          # ← Altere
-DB_PASSWORD = "SuaSenhaForte123!"  # ← Altere
+# === CONFIGURE YOUR CREDENTIALS HERE ===
+DATABASE = "your_DB"
+TABLE = "your_table"
+DB_USER = "your_user"
+DB_PASSWORD = "your_password"
 
 def get_db_connection():
     conn_str = (
@@ -32,7 +32,7 @@ def index():
         columns = [column[0] for column in cursor.description]
         conn.close()
 
-        # Gera tabela HTML
+        # Create HTML table
         html = """
         <html>
             <head>
@@ -46,7 +46,7 @@ def index():
                 </style>
             </head>
             <body>
-                <h1>📊 Dados do SQL Server</h1>
+                <h1>📊 SQL Server Data</h1>
                 <table>
                     <thead>
                         <tr>
@@ -70,10 +70,11 @@ def index():
 
     except Exception as e:
         return f"""
-        <h1 style="color:red">❌ Erro ao conectar ao banco</h1>
+        <h1 style="color:red">❌ Error connecting to the DB</h1>
         <p><strong>{str(e)}</strong></p>
-        <p>Verifique: credenciais, SQL Server rodando, ngrok iniciado.</p>
+        <p>Check: credentials, SQL Server running, ngrok started.</p>
         """
 
 if __name__ == '__main__':
+
     app.run(host='0.0.0.0', port=5000)
