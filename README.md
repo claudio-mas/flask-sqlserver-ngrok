@@ -32,6 +32,7 @@ Perfect for internal reports, demos, or secure data sharing — without exposing
     ```
 
 5.  **Access your dashboard**
+
     Open: `https://yourapp.ngrok.io`
 
     🔗 Get a free fixed domain at [ngrok](https://ngrok.com/).
@@ -50,3 +51,4 @@ Perfect for internal reports, demos, or secure data sharing — without exposing
 ## 🇧🇷 Versão em Português
 
 👉 Veja o artigo em português: [Como Expor um Banco de Dados SQL Server Local na Internet](#)
+
